@@ -1,0 +1,71 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Define o intervalo de x de -5 a 5
+x = np.linspace(-5, 5, 400)
+
+# Função A: Linear
+def funcao_linear(x):
+    return 2 * x + 1
+
+# Função B: Polinomial
+def funcao_polinomial(x):
+    return x**3 - 2*x**2 + 3*x - 1
+
+# Função C: Quadrática
+def funcao_quadratica(x):
+    return x**2 + 3*x + 2
+
+# Função D: Modular
+def funcao_modular(x):
+    return np.abs(x)
+
+# Função E: Exponencial
+def funcao_exponencial(x):
+    return np.exp(x)
+
+# Função F: Logarítmica
+def funcao_logaritmica(x):
+    return np.log(x + 1)
+
+# Função G: Trigonométrica (seno e cosseno)
+def funcao_trigonometrica(x):
+    return np.sin(x), np.cos(x)
+
+# Plota as funções
+plt.figure(figsize=(12, 10))
+
+plt.subplot(3, 3, 1)
+plt.plot(x, funcao_linear(x))
+plt.title("Função Linear")
+
+plt.subplot(3, 3, 2)
+plt.plot(x, funcao_polinomial(x))
+plt.title("Função Polinomial")
+
+plt.subplot(3, 3, 3)
+plt.plot(x, funcao_quadratica(x))
+plt.title("Função Quadrática")
+
+plt.subplot(3, 3, 4)
+plt.plot(x, funcao_modular(x))
+plt.title("Função Modular")
+
+plt.subplot(3, 3, 5)
+plt.plot(x, funcao_exponencial(x))
+plt.title("Função Exponencial")
+
+plt.subplot(3, 3, 6)
+plt.plot(x, funcao_logaritmica(x))
+plt.title("Função Logarítmica")
+
+plt.subplot(3, 3, 7)
+plt.plot(x, funcao_trigonometrica(x)[0])
+plt.title("Função Trigonométrica (Seno)")
+
+plt.subplot(3, 3, 8)
+plt.plot(x, funcao_trigonometrica(x)[1])
+plt.title("Função Trigonométrica (Cosseno)")
+
+plt.tight_layout()
+plt.show()
